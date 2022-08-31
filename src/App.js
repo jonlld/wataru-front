@@ -13,25 +13,28 @@ const App = () => {
     // read and format data
     const enteredRequest = requestRef.current.value;
     const formattedRequest = {
-      request_lang: "ja",
-      request_string: enteredRequest,
+      lang: "ja",
+      string: enteredRequest,
     };
 
     const url = "http://localhost/8000";
+    // const options = {
+    //   method: "POST",
+    //   body: JSON.stringify(formattedRequest),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // };
+
     const options = {
-      method: "POST",
-      body: JSON.stringify(formattedRequest),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      method: "GET",
     };
 
-    console.log(formattedRequest);
+    // BUG connection refused
+    const res = await fetch(`${url}/api/phrases`, options);
+    const data = await res.json();
 
-    // const res = await fetch(`${url}/api/phrases`, options);
-    // const data = await res.json();
-
-    // console.log(data);
+    console.log("data: ", data);
   };
 
   return (
@@ -42,7 +45,7 @@ const App = () => {
         <input type="text" id="phrase" ref={requestRef}></input>
         <button type="submit">Submit</button>
       </form>
-      <Phrases phrases={phrases} />
+      {/* <Phrases phrases={phrases} /> */}
     </div>
   );
 };
