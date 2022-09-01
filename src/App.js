@@ -17,18 +17,18 @@ const App = () => {
       string: enteredRequest,
     };
 
-    const url = "http://localhost/8000";
-    // const options = {
-    //   method: "POST",
-    //   body: JSON.stringify(formattedRequest),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // };
-
+    const url = "http://localhost:8000";
     const options = {
-      method: "GET",
+      method: "POST",
+      body: JSON.stringify(formattedRequest),
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
+
+    // const options = {
+    //   method: "GET",
+    // };
 
     // BUG connection refused
     const res = await fetch(`${url}/api/phrases`, options);
