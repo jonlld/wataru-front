@@ -11,7 +11,7 @@ import { Button, Accordion, Stack } from "react-bootstrap";
 const Page = ({ phrase }) => {
   return (
     <Accordion className="accordion-element" style={{ marginTop: "8px" }}>
-      <Accordion.Item eventKey="0">
+      <Accordion.Item eventKey="1">
         <Accordion.Header>{phrase.input}</Accordion.Header>
         <Accordion.Body>
           <Stack>

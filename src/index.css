@@ -81,10 +81,14 @@ h1 {
   margin-right: 12px;
 }
 
-/* used inspector to see actual classes - overriding here */
+/* OVERRINDING REACT BOOTSTRAP STYLES FOR ACCORDION */
+/* used inspector to see actual classes */
+
 .accordion-button:not(.collapsed) {
   color: #444;
-  background-color: #ebebebb8;
+  /* background-color: #ebebebb8; */
+  /* background-color: #ffecb1; */
+  background-color: #fedddf;
 }
 
 .accordion-button:focus {
