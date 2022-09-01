@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
 import Header from "./components/Header";
-import Phrases from "./components/Phrases";
+import Latest from "./components/Latest";
+import Book from "./components/Book";
 
-import { Button } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 
 const App = () => {
   const [phrases, setPhrases] = useState("");
+  const [latest, setLatest] = useState();
   const requestRef = useRef();
 
   // fetch request
@@ -39,17 +41,33 @@ const App = () => {
   const test = "TEST STRING";
 
   return (
-    <div className="container-sm">
-      <Header />
-      <form className="d-grid gap-2" onSubmit={requestHandler}>
-        <label htmlFor="phrase">Phrase</label>
-        <input type="text" id="phrase" ref={requestRef}></input>
-        <Button variant="secondary" type="submit">
-          Get Phrase
-        </Button>
-      </form>
-      {phrases && <Phrases phrases={phrases} />}
-    </div>
+    <Container>
+      <Row className="text-center">
+        <Col xs={6}>
+          <Header />
+        </Col>
+        <Col xs={6}>
+          <form onSubmit={requestHandler}>
+            <label htmlFor="phrase">Tell Me:</label>
+            <input
+              type="text"
+              id="phrase"
+              ref={requestRef}
+              placeholder="type phrase..."
+            ></input>
+            <Button variant="secondary" type="submit">
+              Fetch
+            </Button>
+          </form>
+        </Col>
+      </Row>
+      <Row>
+        {/* for Latest */}
+        <Col xs={6}>{phrases && <Latest phrases={phrases} />}</Col>
+        {/* for Book & Pages */}
+        <Col xs={6}>{phrases && <Book phrases={phrases} />}</Col>
+      </Row>
+    </Container>
   );
 };
 
