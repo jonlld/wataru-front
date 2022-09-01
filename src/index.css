@@ -56,6 +56,7 @@ h1 {
 }
 
 .header {
+  font-size: 3rem;
   margin-left: 0;
   text-align: left;
   color: #c53d43;
@@ -63,6 +64,8 @@ h1 {
 
 .form-container {
   display: flex;
+  padding: 12px;
+  padding-right: 0px;
   /* background-color: red; */
   align-items: center;
   justify-content: right;

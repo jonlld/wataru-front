@@ -50,8 +50,8 @@ const App = () => {
       <Row
         // style={{ backgroundColor: "#89CFFD", padding: "30px 0" }}
         style={{
-          marginTop: "32px",
-          marginBottom: "42px",
+          marginTop: "22px",
+          marginBottom: "32px",
           borderBottom: "3px solid #444",
           padding: "20px 0 30px 0",
           // borderRadius: "0 0 8px 8px",
@@ -62,7 +62,7 @@ const App = () => {
             <h1 style={{ marginTop: "0" }} className="header">
               Wataru
             </h1>
-            <small>...have phrasebook, will travel 🌎</small>
+            <small>...have phrasebook, will travel</small>
           </div>
         </Col>
         <Col xs={7}>
@@ -95,7 +95,7 @@ const App = () => {
         {/* for Book & Pages */}
         <Col xs={6}>
           <h1>Your Phrasebook:</h1>
-          <div style={{ height: "450px", overflow: "scroll" }}>
+          <div style={{ height: "470px", overflow: "scroll" }}>
             {phrases && <Book phrases={phrases} bookmarked={bookmarked} />}
           </div>
         </Col>
