@@ -44,8 +44,6 @@ const App = () => {
     setRandomNum(Math.floor(Math.random() * 15) + 1);
   };
 
-  const test = "TEST STRING";
-
   return (
     // <Container style={{ border: "1px solid #444" }}>
     <Container>
@@ -64,7 +62,7 @@ const App = () => {
             <h1 style={{ marginTop: "0" }} className="header">
               Wataru
             </h1>
-            <small>...have phrasebook, will travel</small>
+            <small>...have phrasebook, will travel 🌎</small>
           </div>
         </Col>
         <Col xs={7}>
@@ -77,7 +75,7 @@ const App = () => {
               placeholder="type your phrase here..."
             ></input>
             <Button variant="warning" type="submit">
-              Fetch
+              Do it!
             </Button>
           </form>
         </Col>
@@ -97,7 +95,7 @@ const App = () => {
         {/* for Book & Pages */}
         <Col xs={6}>
           <h1>Your Phrasebook:</h1>
-          <div style={{ height: "450px", overflow: "auto" }}>
+          <div style={{ height: "450px", overflow: "scroll" }}>
             {phrases && <Book phrases={phrases} bookmarked={bookmarked} />}
           </div>
         </Col>

@@ -5,6 +5,23 @@
 
 /* TODO set app to 100vh  */
 
+/* ******************** */
+/* Animation */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card-container {
+  animation: fadein 2s;
+}
+
+/* ******************** */
 h1 {
   color: #8d6449;
   /* color: #c53d43; */
@@ -18,7 +35,7 @@ h1 {
 }
 
 .header-container small {
-  font-style: italic;
+  /* font-style: italic; */
   margin-bottom: 12px;
   color: #c53d43;
 }

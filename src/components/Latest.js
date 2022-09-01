@@ -15,11 +15,14 @@ const Latest = ({ phrases, randomNum, setBookmarked }) => {
   // To add the favourite functionality - update faves state & local storage
 
   return (
-    <Card style={{ marginTop: "1rem", width: "100%" }}>
+    <Card
+      className="card-container"
+      style={{ marginTop: "1rem", width: "100%" }}
+    >
       <Card.Img
         variant="top"
         src={image}
-        style={{ width: "18rem", margin: "0 auto", padding: "24px" }}
+        style={{ width: "18rem", margin: "0 auto", paddingTop: "24px" }}
       />
       <Card.Body>
         <Card.Title>{phrase.input}</Card.Title>
