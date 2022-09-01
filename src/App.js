@@ -7,7 +7,7 @@ import { Button, Container, Row, Col, Navbar } from "react-bootstrap";
 
 const App = () => {
   const [phrases, setPhrases] = useState("");
-  const [latest, setLatest] = useState();
+  const [bookmarked, setBookmarked] = useState([]);
   const requestRef = useRef();
 
   // fetch request
@@ -65,9 +65,15 @@ const App = () => {
       </Navbar>
       <Row>
         {/* for Latest */}
-        <Col xs={6}>{phrases && <Latest phrases={phrases} />}</Col>
+        <Col xs={6}>
+          {phrases && (
+            <Latest phrases={phrases} setBookmarked={setBookmarked} />
+          )}
+        </Col>
         {/* for Book & Pages */}
-        <Col xs={6}>{phrases && <Book phrases={phrases} />}</Col>
+        <Col xs={6}>
+          {phrases && <Book phrases={phrases} bookmarked={bookmarked} />}
+        </Col>
       </Row>
     </Container>
   );

@@ -1,12 +1,16 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-const Latest = ({ phrases }) => {
+const Latest = ({ phrases, setBookmarked }) => {
   // last item from array
   const phrase = phrases[phrases.length - 1];
 
   const randomNum = Math.floor(Math.random() * 15) + 1;
   const image = `./img/${randomNum}.png`;
+
+  const bookmarkHandler = () => {
+    setBookmarked((prev) => [phrase, ...prev]);
+  };
 
   // TODO
   // To add the favourite functionality - update faves state & local storage
@@ -22,7 +26,7 @@ const Latest = ({ phrases }) => {
         <Card.Title>{phrase.input}</Card.Title>
         <Card.Text>{phrase.translatedText}</Card.Text>
         <div className="d-grid gap-2">
-          <Button variant="secondary" size="lg">
+          <Button variant="secondary" size="lg" onClick={bookmarkHandler}>
             Add
           </Button>
         </div>
