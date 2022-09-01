@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Portable Network Graphics
+*.png
+
 # testing
 /coverage
 

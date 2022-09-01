@@ -5,13 +5,19 @@ const Latest = ({ phrases }) => {
   // last item from array
   const phrase = phrases[phrases.length - 1];
 
+  const randomNum = Math.floor(Math.random() * 15) + 1;
+  const image = `./img/${randomNum}.png`;
+
   // TODO
   // To add the favourite functionality - update faves state & local storage
-  // Random image function - use #!
 
   return (
-    <Card style={{ marginTop: "1rem", width: "18rem" }}>
-      <Card.Img variant="top" src="./img/sakura.png" />
+    <Card style={{ marginTop: "1rem", width: "29rem" }}>
+      <Card.Img
+        variant="top"
+        src={image}
+        style={{ width: "18rem", margin: "0 auto", padding: "12px" }}
+      />
       <Card.Body>
         <Card.Title>{phrase.input}</Card.Title>
         <Card.Text>{phrase.translatedText}</Card.Text>

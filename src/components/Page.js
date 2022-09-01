@@ -1,12 +1,21 @@
 import React from "react";
-import { Accordion } from "react-bootstrap";
+import { Button, Accordion, Stack } from "react-bootstrap";
 
 const Page = ({ phrase }) => {
   return (
-    <Accordion>
-      <Accordion.Item>
+    <Accordion flush="true">
+      <Accordion.Item eventkey="0">
         <Accordion.Header>{phrase.input}</Accordion.Header>
-        <Accordion.Body>{phrase.translatedText}</Accordion.Body>
+        <Accordion.Body>
+          <Stack>
+            <div>{phrase.translatedText}</div>
+            <div>
+              <Button size="sm" variant="secondary">
+                Remove
+              </Button>
+            </div>
+          </Stack>
+        </Accordion.Body>
       </Accordion.Item>
     </Accordion>
   );
