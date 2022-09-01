@@ -37,6 +37,9 @@ const App = () => {
     console.log("data: ", data);
     setPhrases(data);
 
+    // clear inputs
+    requestRef.current.value = "";
+
     // random number for image - do once per fetch
     setRandomNum(Math.floor(Math.random() * 15) + 1);
   };
@@ -47,31 +50,39 @@ const App = () => {
     // <Container style={{ border: "1px solid #444" }}>
     <Container>
       <Row
-        style={{ backgroundColor: "#89CFFD", padding: "30px 0" }}
-        className="text-center"
+        // style={{ backgroundColor: "#89CFFD", padding: "30px 0" }}
+        style={{
+          marginTop: "32px",
+          marginBottom: "42px",
+          borderBottom: "3px solid #444",
+          padding: "20px 0 30px 0",
+          // borderRadius: "0 0 8px 8px",
+        }}
       >
         <Col xs={4}>
-          <h1 className="header">Wataru</h1>
+          <h1 style={{ marginTop: "0" }} className="header">
+            Welcome to | Wataru
+          </h1>
         </Col>
         <Col xs={8}>
           <form className="form-container" onSubmit={requestHandler}>
-            <label htmlFor="phrase">How do I say:</label>
+            {/* <label htmlFor="phrase">How do I say:</label> */}
             <input
               type="text"
               id="phrase"
               ref={requestRef}
-              placeholder="phrase here..."
+              placeholder="type your phrase here..."
             ></input>
-            <Button variant="secondary" type="submit">
+            <Button variant="warning" type="submit">
               Fetch
             </Button>
           </form>
         </Col>
       </Row>
-      <Row>
+      <Row style={{ height: "550px" }}>
         {/* for Latest */}
         <Col xs={6}>
-          <h1 style={{ marginTop: "1rem" }}>Last Search:</h1>
+          <h1>Your Last Search:</h1>
           {phrases && (
             <Latest
               phrases={phrases}
@@ -82,8 +93,10 @@ const App = () => {
         </Col>
         {/* for Book & Pages */}
         <Col xs={6}>
-          <h1 style={{ marginTop: "1rem" }}>My Phrasebook:</h1>
-          {phrases && <Book phrases={phrases} bookmarked={bookmarked} />}
+          <h1>Your Phrasebook:</h1>
+          <div style={{ height: "450px", overflow: "auto" }}>
+            {phrases && <Book phrases={phrases} bookmarked={bookmarked} />}
+          </div>
         </Col>
       </Row>
     </Container>

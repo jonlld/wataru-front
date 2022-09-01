@@ -1,9 +1,13 @@
 /* global CSS */
 
+/* Referenced: */
+/* https://www.colordic.org/w */
+
 /* TODO set app to 100vh  */
 
 h1 {
   color: #8d6449;
+  margin-top: 1rem;
 }
 
 .header {
@@ -19,7 +23,9 @@ h1 {
 }
 
 .form-container label {
-  color: #444;
+  color: #8d6449;
+  font-size: 1rem;
+  font-weight: bold;
   margin-right: 12px;
 }
 
