@@ -7,12 +7,14 @@
 
 h1 {
   color: #8d6449;
+  /* color: #c53d43; */
   margin-top: 1rem;
 }
 
 .header {
   margin-left: 0;
   text-align: left;
+  color: #c53d43;
 }
 
 .form-container {

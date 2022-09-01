@@ -25,7 +25,7 @@ const Latest = ({ phrases, randomNum, setBookmarked }) => {
         <Card.Title>{phrase.input}</Card.Title>
         <Card.Text>{phrase.translatedText}</Card.Text>
         <div className="d-grid gap-2">
-          <Button variant="secondary" size="lg" onClick={bookmarkHandler}>
+          <Button variant="warning" size="lg" onClick={bookmarkHandler}>
             Add
           </Button>
         </div>

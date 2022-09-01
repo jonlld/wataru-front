@@ -5,6 +5,9 @@ import { Button, Accordion, Stack } from "react-bootstrap";
 // TODO add remove option
 // TODO stop last accordion from opening
 
+// reference:
+// 0: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
+
 const Page = ({ phrase }) => {
   return (
     <Accordion style={{ marginTop: "8px" }}>
@@ -13,7 +16,6 @@ const Page = ({ phrase }) => {
         <Accordion.Body>
           <Stack>
             <div>{phrase.translatedText}</div>
-            <div></div>
           </Stack>
         </Accordion.Body>
       </Accordion.Item>
@@ -22,5 +24,3 @@ const Page = ({ phrase }) => {
 };
 
 export default Page;
-
-// 0: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
