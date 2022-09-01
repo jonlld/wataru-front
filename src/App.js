@@ -18,6 +18,7 @@ const App = () => {
     };
 
     const url = "http://localhost:8000";
+
     const options = {
       method: "POST",
       body: JSON.stringify(formattedRequest),
@@ -26,11 +27,6 @@ const App = () => {
       },
     };
 
-    // const options = {
-    //   method: "GET",
-    // };
-
-    // BUG connection refused
     const res = await fetch(`${url}/api/phrases`, options);
     const data = await res.json();
 
