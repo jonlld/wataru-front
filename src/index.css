@@ -11,6 +11,18 @@ h1 {
   margin-top: 1rem;
 }
 
+.header-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.header-container small {
+  font-style: italic;
+  margin-bottom: 12px;
+  color: #c53d43;
+}
+
 .header {
   margin-left: 0;
   text-align: left;
@@ -35,4 +47,20 @@ h1 {
   padding: 7px 18px;
   min-width: 480px;
   margin-right: 12px;
+}
+
+/* used inspector to see actual classes - overriding here */
+.accordion-button:not(.collapsed) {
+  color: #444;
+  background-color: #ebebebb8;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* icon color */
+.accordion-button:not(.collapsed)::after {
+  background-image: #c53d43;
+  transform: #c53d43;
 }

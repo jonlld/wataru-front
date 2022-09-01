@@ -59,12 +59,15 @@ const App = () => {
           // borderRadius: "0 0 8px 8px",
         }}
       >
-        <Col xs={4}>
-          <h1 style={{ marginTop: "0" }} className="header">
-            Welcome to | Wataru
-          </h1>
+        <Col xs={5}>
+          <div className="header-container">
+            <h1 style={{ marginTop: "0" }} className="header">
+              Wataru
+            </h1>
+            <small>...have phrasebook, will travel</small>
+          </div>
         </Col>
-        <Col xs={8}>
+        <Col xs={7}>
           <form className="form-container" onSubmit={requestHandler}>
             {/* <label htmlFor="phrase">How do I say:</label> */}
             <input
