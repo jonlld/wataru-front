@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import Header from "./components/Header";
 import Phrases from "./components/Phrases";
 
-import Button from "react-bootstrap/Button";
+import { Button } from "react-bootstrap";
 
 const App = () => {
-  const [phrases, setPhrases] = useState([]);
+  const [phrases, setPhrases] = useState("");
   const requestRef = useRef();
 
   // fetch request
@@ -33,17 +33,22 @@ const App = () => {
     const data = await res.json();
 
     console.log("data: ", data);
+    setPhrases(data);
   };
 
+  const test = "TEST STRING";
+
   return (
-    <div>
+    <div className="container-sm">
       <Header />
-      <form onSubmit={requestHandler}>
+      <form className="d-grid gap-2" onSubmit={requestHandler}>
         <label htmlFor="phrase">Phrase</label>
         <input type="text" id="phrase" ref={requestRef}></input>
-        <Button type="submit">Test Button</Button>
+        <Button variant="secondary" type="submit">
+          Get Phrase
+        </Button>
       </form>
-      {/* <Phrases phrases={phrases} /> */}
+      {phrases && <Phrases phrases={phrases} />}
     </div>
   );
 };
