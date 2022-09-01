@@ -1,11 +1,10 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-const Latest = ({ phrases, setBookmarked }) => {
+const Latest = ({ phrases, randomNum, setBookmarked }) => {
   // last item from array
   const phrase = phrases[phrases.length - 1];
 
-  const randomNum = Math.floor(Math.random() * 15) + 1;
   const image = `./img/${randomNum}.png`;
 
   const bookmarkHandler = () => {
@@ -16,11 +15,11 @@ const Latest = ({ phrases, setBookmarked }) => {
   // To add the favourite functionality - update faves state & local storage
 
   return (
-    <Card style={{ marginTop: "1rem", width: "29rem" }}>
+    <Card style={{ marginTop: "1rem", width: "100%" }}>
       <Card.Img
         variant="top"
         src={image}
-        style={{ width: "18rem", margin: "0 auto", padding: "12px" }}
+        style={{ width: "18rem", margin: "0 auto", padding: "24px" }}
       />
       <Card.Body>
         <Card.Title>{phrase.input}</Card.Title>

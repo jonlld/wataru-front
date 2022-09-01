@@ -1,19 +1,19 @@
 import React from "react";
 import { Button, Accordion, Stack } from "react-bootstrap";
 
+// TODO change color / formatting
+// TODO add remove option
+// TODO stop last accordion from opening
+
 const Page = ({ phrase }) => {
   return (
-    <Accordion flush="true">
-      <Accordion.Item eventkey="0">
+    <Accordion style={{ marginTop: "1rem" }}>
+      <Accordion.Item>
         <Accordion.Header>{phrase.input}</Accordion.Header>
         <Accordion.Body>
           <Stack>
             <div>{phrase.translatedText}</div>
-            <div>
-              <Button size="sm" variant="secondary">
-                Remove
-              </Button>
-            </div>
+            <div></div>
           </Stack>
         </Accordion.Body>
       </Accordion.Item>
