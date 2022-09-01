@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import Header from "./components/Header";
 import Phrases from "./components/Phrases";
 
+import Button from "react-bootstrap/Button";
+
 const App = () => {
   const [phrases, setPhrases] = useState([]);
   const requestRef = useRef();
@@ -39,7 +41,7 @@ const App = () => {
       <form onSubmit={requestHandler}>
         <label htmlFor="phrase">Phrase</label>
         <input type="text" id="phrase" ref={requestRef}></input>
-        <button type="submit">Submit</button>
+        <Button type="submit">Test Button</Button>
       </form>
       {/* <Phrases phrases={phrases} /> */}
     </div>
