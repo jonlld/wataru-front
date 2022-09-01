@@ -11,11 +11,9 @@ const Latest = ({ phrases, randomNum, setBookmarked }) => {
     setBookmarked((prev) => [phrase, ...prev]);
   };
 
-  // TODO
-  // To add the favourite functionality - update faves state & local storage
-
   return (
     <Card
+      key={phrases}
       className="card-container"
       style={{ marginTop: "1rem", width: "100%" }}
     >
