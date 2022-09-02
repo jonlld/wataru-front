@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Latest from "./components/Latest";
 import Book from "./components/Book";
 
-import { Button, Container, Row, Col, Navbar } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 
 const App = () => {
   const [phrases, setPhrases] = useState("");
@@ -10,7 +10,7 @@ const App = () => {
   const [randomNum, setRandomNum] = useState(0);
   const requestRef = useRef();
 
-  // fetch request
+  // ping backend with post request and update state
   const requestHandler = async (e) => {
     e.preventDefault();
 
@@ -40,21 +40,18 @@ const App = () => {
     // clear inputs
     requestRef.current.value = "";
 
-    // random number for image - do once per fetch
+    // set number for image; once per fetch so no re-render on 'Add' click
     setRandomNum(Math.floor(Math.random() * 15) + 1);
   };
 
   return (
-    // <Container style={{ border: "1px solid #444" }}>
     <Container>
       <Row
-        // style={{ backgroundColor: "#89CFFD", padding: "30px 0" }}
         style={{
           marginTop: "22px",
           marginBottom: "32px",
           borderBottom: "3px solid #444",
           padding: "20px 0 30px 0",
-          // borderRadius: "0 0 8px 8px",
         }}
       >
         <Col xs={5}>
@@ -67,7 +64,6 @@ const App = () => {
         </Col>
         <Col xs={7}>
           <form className="form-container" onSubmit={requestHandler}>
-            {/* <label htmlFor="phrase">How do I say:</label> */}
             <input
               type="text"
               id="phrase"

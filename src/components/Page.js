@@ -1,12 +1,5 @@
 import React from "react";
-import { Button, Accordion, Stack } from "react-bootstrap";
-
-// TODO change color / formatting
-// TODO add remove option
-// TODO stop last accordion from opening
-
-// reference:
-// 0: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
+import { Accordion, Stack } from "react-bootstrap";
 
 const Page = ({ phrase }) => {
   return (

@@ -2,11 +2,13 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 
 const Latest = ({ phrases, randomNum, setBookmarked }) => {
-  // last item from array
+  // get last item from array
   const phrase = phrases[phrases.length - 1];
 
+  // use randomNum to pick an image
   const image = `./img/${randomNum}.png`;
 
+  // update boorkmarked on click
   const bookmarkHandler = () => {
     setBookmarked((prev) => [phrase, ...prev]);
   };
@@ -37,11 +39,7 @@ const Latest = ({ phrases, randomNum, setBookmarked }) => {
 
 export default Latest;
 
-// (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
-// 0: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
-// 1: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
-// 2: {translatedText: '音楽', detectedSourceLanguage: 'en', input: 'Music'}
-// 3: {translatedText: 'コーヒー', detectedSourceLanguage: 'en', input: 'Coffee'}
-// 4: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
-// 5: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
-// 6: {translatedText: 'カフェ', detectedSourceLanguage: 'en', input: 'Cafe'}
+// *** example structure ***
+
+// [{…}]
+// {translatedText: 'カフェ', detectedSourceLanguage: 'en', input: 'Cafe'}

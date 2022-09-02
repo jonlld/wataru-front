@@ -2,9 +2,6 @@ import React from "react";
 import Page from "./Page";
 
 const Book = ({ bookmarked }) => {
-  // check
-  console.log("Bookmarked Received by Book: ", bookmarked);
-
   return (
     <div>
       {bookmarked.map((bookmark) => {
@@ -15,6 +12,8 @@ const Book = ({ bookmarked }) => {
 };
 
 export default Book;
+
+// *** example structure ***
 
 // [{…}, {…}, {…}]
 // 0: {translatedText: '美術館', detectedSourceLanguage: 'en', input: 'Museum'}
